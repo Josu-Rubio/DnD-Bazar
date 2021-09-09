@@ -20,3 +20,5 @@ function auth(req, res, next) {
     res.status(400).json({ msg: 'Token is not valid' });
   }
 }
+
+module.exports = auth;
