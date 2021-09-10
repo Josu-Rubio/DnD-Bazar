@@ -16,6 +16,7 @@
     "bcryptjs": "^2.4.3",
     "config": "^3.3.6",
     "express": "^4.17.1",
-    "mongoose": "^6.0.4"
+    "mongoose": "^6.0.4",
+    "stripe": "^8.174.0"
   }
 }
