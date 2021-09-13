@@ -75,6 +75,6 @@ module.exports.delete_item = async (req, res) => {
     return res.status(201).send(cart);
   } catch (err) {
     console.log(err);
-    res.status(500).send('Something went wrogn');
+    res.status(500).send('Something went wrong');
   }
 };
