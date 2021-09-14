@@ -61,7 +61,7 @@ export const updateItem = (id, item) => (dispatch) => {
       })
     )
     .catch((err) =>
-      dispatch(returnErros(err.response.data, err.response.status))
+      dispatch(returnErrors(err.response.data, err.response.status))
     );
 };
 

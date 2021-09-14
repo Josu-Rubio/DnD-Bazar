@@ -14,7 +14,7 @@ import {
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { login } from '../../actions/authActions';
-import { clearErrors } from '../../actions/clearErrors';
+import { clearErrors } from '../../actions/errorActions';
 
 class LoginModal extends Component {
   state = {
@@ -27,7 +27,7 @@ class LoginModal extends Component {
   static propTypes = {
     isAuthenticated: PropTypes.bool,
     error: PropTypes.object.isRequired,
-    login: PropTypes.func.isRequires,
+    login: PropTypes.func.isRequired,
     clearErrors: PropTypes.func.isRequired,
   };
 
@@ -83,7 +83,7 @@ class LoginModal extends Component {
           </NavLink>
         </Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHEader toggle={this.toggle}>Login</ModalHEader>
+          <ModalHeader toggle={this.toggle}>Login</ModalHeader>
           <ModalBody>
             {this.state.msg ? (
               <Alert color='danger'>{this.state.msg}</Alert>

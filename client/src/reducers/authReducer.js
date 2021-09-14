@@ -27,7 +27,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         isAuthenticated: true,
-        isLoadin: false,
+        isLoading: false,
         user: action.payload,
       };
     case LOGIN_SUCCESS:
@@ -48,7 +48,7 @@ export default function (state = initialState, action) {
         ...state,
         token: null,
         user: null,
-        isAuthinticated: false,
+        isAuthenticated: false,
         isLoading: false,
       };
     default:
