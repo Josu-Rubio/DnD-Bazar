@@ -34,9 +34,9 @@ class AppNavbar extends Component {
     const { isAuthenticated, user } = this.props.auth;
 
     const authLinks = (
-      <Fragment>
+      <Fragment style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <NavItem>
-          <span className='navbar-text mr-3'>
+          <span className=' nav-link'>
             <strong>{user ? `Welcome ${user.name}` : ''}</strong>
           </span>
         </NavItem>
