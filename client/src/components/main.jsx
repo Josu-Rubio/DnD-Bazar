@@ -14,13 +14,13 @@ class Main extends Component {
           <Route path='/home'>
             <Home />
           </Route>
-          <Route path='addItem'>
+          <Route path='/addItem'>
             <AddItem />
           </Route>
-          <Route pat='cart'>
+          <Route path='/cart'>
             <Cart />
           </Route>
-          <Route path='orders'>
+          <Route path='/orders'>
             <Orders />
           </Route>
           <Redirect to='/home' />

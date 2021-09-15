@@ -34,11 +34,11 @@ module.exports.add_cart_item = async (req, res) => {
       let itemIndex = cart.items.findIndex((p) => p.productId == productId);
       //Check if product exist or not
       if (itemIndex > -1) {
-        let productItem = cart.item[itemIndex];
+        let productItem = cart.items[itemIndex];
         productItem.quantity += quantity;
         cart.items[itemIndex] = productItem;
       } else {
-        cart.item.push({ productId, name, quantity, price });
+        cart.items.push({ productId, name, quantity, price });
       }
       cart.bill += quantity * price;
       cart = await cart.save();
@@ -47,7 +47,7 @@ module.exports.add_cart_item = async (req, res) => {
       // No cart exist, create one
       const newCart = await Cart.create({
         userId,
-        items: [(productId, name, quantity, price)],
+        items: [{ productId, name, quantity, price }],
         bill: quantity * price,
       });
       return res.status(201).send(newCart);
@@ -64,10 +64,10 @@ module.exports.delete_item = async (req, res) => {
 
   try {
     let cart = await Cart.findOne({ userId });
-    let itemIndex = cart.item.findIndex((p) => p.productId == productId);
+    let itemIndex = cart.items.findIndex((p) => p.productId == productId);
 
     if (itemIndex > -1) {
-      let productItem = cart.items[itemsIndex];
+      let productItem = cart.items[itemIndex];
       cart.bill -= productItem.quantity * productItem.price;
       cart.items.splice(itemIndex, 1);
     }

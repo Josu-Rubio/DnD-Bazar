@@ -7,15 +7,14 @@ const ItemSchema = new Schema({
     required: true,
     index: true,
   },
-  image: {
-    type: String,
-    index: true,
-  },
+  // image: {
+  //   type: String,
+  //   index: true,
+  // },
   description: {
     type: String,
     required: true,
   },
-
   /*
     tags: [
       {

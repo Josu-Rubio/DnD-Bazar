@@ -36,8 +36,8 @@ class Cart extends Component {
     this.state.loaded = true;
   };
 
-  onDeleteFromCArt = (id, itemId) => {
-    this.props.delereFromCart(id, itemId);
+  onDeleteFromCart = (id, itemId) => {
+    this.props.deleteFromCart(id, itemId);
   };
 
   render() {
@@ -77,14 +77,14 @@ class Cart extends Component {
                   <Card>
                     <CardBody>
                       <CardTitle tag='h5'>{item.name}</CardTitle>
-                      <CardSubtitle tag='h6'>{item.price}</CardSubtitle>
+                      <CardSubtitle tag='h6'>Rs. {item.price}</CardSubtitle>
                       <CardText>Quantity - {item.quantity}</CardText>
                       <Button
                         color='danger'
                         onClick={this.onDeleteFromCart.bind(
                           this,
                           user._id,
-                          item.productIt
+                          item.productId
                         )}
                       >
                         Delete
@@ -98,7 +98,7 @@ class Cart extends Component {
                 <Card>
                   <CardBody>
                     <CardTitle tag='h5'>
-                      Total Cost = Rs. {this.props.cart.bill}
+                      Total Cost = Rs. {this.props.cart.cart.bill}
                     </CardTitle>
                     <Checkout
                       user={user._id}

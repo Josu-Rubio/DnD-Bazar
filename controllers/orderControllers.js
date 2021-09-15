@@ -13,7 +13,7 @@ module.exports.get_orders = async (req, res) => {
 
 module.exports.checkout = async (req, res) => {
   try {
-    const userId = req.param.id;
+    const userId = req.params.id;
     const { source } = req.body;
     let cart = await Cart.findOne({ userId });
     let user = await User.findOne({ _id: userId });
@@ -28,7 +28,7 @@ module.exports.checkout = async (req, res) => {
       });
       if (!charge) throw Error('Payment failed');
       if (charge) {
-        const order = await order.create({
+        const order = await Order.create({
           userId,
           items: cart.items,
           bill: cart.bill,

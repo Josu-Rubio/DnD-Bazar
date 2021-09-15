@@ -36,7 +36,7 @@ class AppNavbar extends Component {
     const authLinks = (
       <Fragment>
         <NavItem>
-          <span className='navbar text mr-3'>
+          <span className='navbar-text mr-3'>
             <strong>{user ? `Welcome ${user.name}` : ''}</strong>
           </span>
         </NavItem>
@@ -68,7 +68,7 @@ class AppNavbar extends Component {
 
     return (
       <div>
-        <Navbar color='dark' dark expand='sm' className='mb.5'>
+        <Navbar color='dark' dark expand='sm' className='mb-5'>
           <Container>
             <NavbarBrand href='/'>D&#38;D Bazar</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />

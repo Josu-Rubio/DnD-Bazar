@@ -13,16 +13,19 @@ export default function (state = initialState, action) {
         orders: action.payload,
         loading: false,
       };
+
     case CHECKOUT:
       return {
         ...state,
         orders: [action.payload, ...state.orders],
       };
+
     case ORDERS_LOADING:
       return {
         ...state,
         loading: true,
       };
+
     default:
       return state;
   }

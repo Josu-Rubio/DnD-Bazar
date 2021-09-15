@@ -40,8 +40,8 @@ export const deleteFromCart = (userId, itemId) => (dispatch) => {
         payload: res.data,
       })
     )
-    .catch((res) =>
-      dispatch(returnErrors(res.response.data, res.response.status))
+    .catch((err) =>
+      dispatch(returnErrors(err.response.data, err.response.status))
     );
 };
 

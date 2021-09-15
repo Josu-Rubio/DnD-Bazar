@@ -35,7 +35,7 @@ class LoginModal extends Component {
     const { error, isAuthenticated } = this.props;
     if (error !== prevProps.error) {
       //Check for login error
-      if (error.id !== 'LOGIN_FAIL') {
+      if (error.id === 'LOGIN_FAIL') {
         this.setState({ msg: error.msg.msg });
       } else {
         this.setState({ msg: null });

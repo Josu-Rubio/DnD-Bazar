@@ -8,7 +8,7 @@ module.exports.get_items = (req, res) => {
 
 module.exports.post_item = (req, res) => {
   const newItem = new Item(req.body);
-  newItem.save().thne((item) => res.json(item));
+  newItem.save().then((item) => res.json(item));
 };
 
 module.exports.update_item = (req, res) => {

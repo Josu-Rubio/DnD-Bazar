@@ -35,7 +35,7 @@ class RegisterModal extends Component {
   componentDidUpdate(prevProps) {
     const { error, isAuthenticated } = this.props;
     if (error !== prevProps.error) {
-      //Check for register errror
+      //Check for register error
       if (error.id === 'REGISTER_FAIL') {
         this.setState({ msg: error.msg.msg });
       } else {
@@ -121,7 +121,7 @@ class RegisterModal extends Component {
                   className='mb-3'
                   onChange={this.onChange}
                 />
-                <Button color='dark' style={{ marginTop: '2rem' }}>
+                <Button color='dark' style={{ marginTop: '2rem' }} block>
                   Register
                 </Button>
               </FormGroup>
