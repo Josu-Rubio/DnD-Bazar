@@ -2,11 +2,7 @@ const Order = require('../models/Order');
 const Cart = require('../models/Cart');
 const User = require('../models/User');
 const config = require('config');
-const stripe = require('stripe')(
-  config.get(
-    'sk_test_51JY8axKzm6PGodox4GRHASxiVBf20jre3JGP50SYVfgJ1SrLBvnOjiKhFQo1KBbNHPtiaIH9bWqaXpNTxwgyNqQx00cU6X8CSb'
-  )
-);
+const stripe = require('stripe')(config.get('StripeAPIKey'));
 
 module.exports.get_orders = async (req, res) => {
   const userId = req.params.id;
