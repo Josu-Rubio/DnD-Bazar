@@ -56,7 +56,7 @@ class AppNavbar extends Component {
     );
 
     const guestLinks = (
-      <Fragment>
+      <Fragment style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <NavItem>
           <RegisterModal />
         </NavItem>

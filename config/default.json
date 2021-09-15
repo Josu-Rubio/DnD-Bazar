@@ -1,5 +1,0 @@
-{
-  "dbURI": "mongodb+srv://JosuRubio:NUKYHvAFgnj4mg7a@bazar.duksu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-  "jwtsecret": "asodpjaso13123tlkapsdjaps",
-  "StripeAPIKey": "sk_test_51JY8axKzm6PGodox4GRHASxiVBf20jre3JGP50SYVfgJ1SrLBvnOjiKhFQo1KBbNHPtiaIH9bWqaXpNTxwgyNqQx00cU6X8CSb"
-}
