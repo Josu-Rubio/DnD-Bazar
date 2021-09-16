@@ -64,10 +64,19 @@ class AddItem extends Component {
                 <br />
                 <Label for='description'>Description</Label>
                 <Input
-                  type='select'
-                  name='select'
-                  id='exampleSelect'
+                  type='description'
+                  name='description'
+                  id='description'
                   placeholder='Description of the Item'
+                  onChange={this.onChange}
+                ></Input>
+                <br />
+                <Label for='category'>Category</Label>
+                <Input
+                  type='select'
+                  name='category'
+                  id='category'
+                  placeholder='Category of the Item'
                   onChange={this.onChange}
                 >
                   <option>Armadura</option>
@@ -82,15 +91,6 @@ class AddItem extends Component {
                   <option>Servicio</option>
                   <option>Baratija</option>
                 </Input>
-                <br />
-                <Label for='category'>Category</Label>
-                <Input
-                  type='text'
-                  name='category'
-                  id='category'
-                  placeholder='Category of the Item'
-                  onChange={this.onChange}
-                />
                 <br />
                 <Label for='price'>Price</Label>
                 <Input
