@@ -30,7 +30,7 @@ class AddItem extends Component {
   };
 
   onSubmit = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     const newItem = {
       title: this.state.title,

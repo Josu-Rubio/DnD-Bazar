@@ -25,12 +25,13 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-let dbURI = new aws.S3({
-  accesKeyId: process.env.dbURI,
-});
-// const dbURI = config.get('dbURI');
+// let dbURI = new aws.S3({
+//   secretAccessKey: process.env.dbURI,
+// });
 
-console.log(dbURI);
+const dbURI = process.env.dbURI;
+
+const dbURI = config.get('dbURI');
 
 const port = process.env.PORT || 4000;
 mongoose
