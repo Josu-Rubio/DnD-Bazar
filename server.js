@@ -25,10 +25,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-// let dbURI = new aws.S3({
-//   secretAccessKey: process.env.dbURI,
-// });
-
 const dbURI = process.env.dbURI;
 
 // const dbURI = config.get('dbURI');

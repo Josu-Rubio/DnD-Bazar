@@ -2,14 +2,12 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const bcrypt = require('bcrypt');
-// const aws = require('aws-sdk');
+const aws = require('aws-sdk');
 
 module.exports.signup = (req, res) => {
   const { name, email, password } = req.body;
 
-  // let jwtsecret = new aws.S3({
-  //   secretAccessKey: process.env.jwtsecret,
-  // });
+  const jwtsecret = process.env.jwtsecret;
 
   if (!name || !email || !password) {
     res.status(400).json({ msg: 'Please enter all fields' });
@@ -29,7 +27,7 @@ module.exports.signup = (req, res) => {
         newUser.save().then((user) => {
           jwt.sign(
             { id: user._id },
-            config.get('jwtsecret'),
+            jwtsecret,
             { expiresIn: 3600 },
             (err, token) => {
               if (err) throw err;
@@ -63,7 +61,7 @@ module.exports.login = async (req, res) => {
 
       jwt.sign(
         { id: user._id },
-        config.get('jwtsecret'),
+        jwtsecret,
         { expiresIn: 3600 },
         (err, token) => {
           if (err) throw err;

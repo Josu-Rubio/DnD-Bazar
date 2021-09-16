@@ -1,13 +1,11 @@
 const config = require('config');
 const jwt = require('jsonwebtoken');
-// const aws = require('aws-sdk');
+const aws = require('aws-sdk');
 
 function auth(req, res, next) {
   const token = req.header('x-auth-token');
 
-  // let jwtsecret = new aws.S3({
-  //   secretAccessKey: process.env.jwtsecret,
-  // });
+  const jwtsecret = process.env.jwtsecret;
 
   //check for token
   if (!token) {
@@ -16,7 +14,7 @@ function auth(req, res, next) {
 
   try {
     //Verify token
-    const decoded = jwt.verify(token, config.get('jwtsecret'));
+    const decoded = jwt.verify(token, jwtsecret);
 
     //Add user from payload
     req.user = decoded;
