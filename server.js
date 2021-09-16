@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const config = require('config');
+require('dotenv').config();
+const aws = require('aws-sdk');
 
 const authRoutes = require('./routes/auth');
 const itemRoutes = require('./routes/item');
@@ -23,7 +25,13 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-const dbURI = config.get('dbURI');
+let dbURI = new aws.S3({
+  accesKeyId: process.env.dbURI,
+});
+// const dbURI = config.get('dbURI');
+
+console.log(dbURI);
+
 const port = process.env.PORT || 4000;
 mongoose
   .connect(dbURI, {

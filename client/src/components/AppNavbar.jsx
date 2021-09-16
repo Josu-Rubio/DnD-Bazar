@@ -34,9 +34,9 @@ class AppNavbar extends Component {
     const { isAuthenticated, user } = this.props.auth;
 
     const authLinks = (
-      <Fragment style={{ display: 'flex', justifyContent: 'flex-end' }}>
+      <Fragment>
         <NavItem>
-          <span className=' nav-link'>
+          <span className='navbar-text nav-link'>
             <strong>{user ? `Welcome ${user.name}` : ''}</strong>
           </span>
         </NavItem>
@@ -56,7 +56,7 @@ class AppNavbar extends Component {
     );
 
     const guestLinks = (
-      <Fragment style={{ display: 'flex', justifyContent: 'flex-end' }}>
+      <Fragment>
         <NavItem>
           <RegisterModal />
         </NavItem>
@@ -72,7 +72,11 @@ class AppNavbar extends Component {
           <Container>
             <NavbarBrand href='/'>D&#38;D Bazar</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
+            <Collapse
+              isOpen={this.state.isOpen}
+              navbar
+              style={{ justifyContent: 'flex-end' }}
+            >
               <Nav className='ml-auto' navbar>
                 {isAuthenticated ? authLinks : guestLinks}
               </Nav>

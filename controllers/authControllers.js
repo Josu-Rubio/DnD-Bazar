@@ -2,9 +2,14 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const bcrypt = require('bcrypt');
+// const aws = require('aws-sdk');
 
 module.exports.signup = (req, res) => {
   const { name, email, password } = req.body;
+
+  // let jwtsecret = new aws.S3({
+  //   secretAccessKey: process.env.jwtsecret,
+  // });
 
   if (!name || !email || !password) {
     res.status(400).json({ msg: 'Please enter all fields' });

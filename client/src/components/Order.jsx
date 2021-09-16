@@ -66,7 +66,7 @@ class Orders extends Component {
                   <Card>
                     <CardBody>
                       <CardTitle tag='h4'>
-                        {order.items.length} items - Total cost: Rs.{' '}
+                        {order.items.length} items - Total cost: Po.
                         {order.bill}
                       </CardTitle>
                       <div className='row'>
@@ -78,7 +78,7 @@ class Orders extends Component {
                                   {item.name} ({item.quantity} pieces)
                                 </CardTitle>
                                 <CardSubtitle tag='h6'>
-                                  Rs. {item.price}/piece
+                                  {item.price} Po./piece
                                 </CardSubtitle>
                               </CardBody>
                             </Card>
