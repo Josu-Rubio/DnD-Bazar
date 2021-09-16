@@ -64,12 +64,24 @@ class AddItem extends Component {
                 <br />
                 <Label for='description'>Description</Label>
                 <Input
-                  type='text'
+                  type='select'
                   name='description'
                   id='description'
                   placeholder='Description of the Item'
                   onChange={this.onChange}
-                />
+                >
+                  <option>Armadura</option>
+                  <option>Arma</option>
+                  <option>Equipo Aventurero</option>
+                  <option>Herramienta</option>
+                  <option>Montura</option>
+                  <option>Arreo</option>
+                  <option>Vehículo Acuático</option>
+                  <option>Mercancía</option>
+                  <option>Alimentación</option>
+                  <option>Servicio</option>
+                  <option>Baratija</option>
+                </Input>
                 <br />
                 <Label for='category'>Category</Label>
                 <Input

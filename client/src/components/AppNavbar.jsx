@@ -70,6 +70,7 @@ class AppNavbar extends Component {
       <div>
         <Navbar color='dark' dark expand='sm' className='mb-5'>
           <Container>
+            <img src='./logo192.png' alt='DnD' height='30px' />
             <NavbarBrand href='/'>D&#38;D Bazar</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse
