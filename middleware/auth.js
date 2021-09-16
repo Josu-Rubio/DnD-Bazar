@@ -5,7 +5,7 @@ const aws = require('aws-sdk');
 function auth(req, res, next) {
   const token = req.header('x-auth-token');
 
-  const jwtsecret = process.env.jwtsecret;
+  const jwtsecret = process.env.jwtsecret; //Substitute this for "const jwtsecret = config.get(jwtsecret)" for local deployment
 
   //check for token
   if (!token) {

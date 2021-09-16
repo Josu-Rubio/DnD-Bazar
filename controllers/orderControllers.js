@@ -25,6 +25,7 @@ module.exports.checkout = async (req, res) => {
 
     if (cart) {
       const charge = await stripe.charges.create({
+        //Substitute "stripe" for "config.get(StripeAPPkey)" for local deployment
         amount: cart.bill,
         currency: 'eur',
         source: source,

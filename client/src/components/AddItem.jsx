@@ -65,8 +65,8 @@ class AddItem extends Component {
                 <Label for='description'>Description</Label>
                 <Input
                   type='select'
-                  name='description'
-                  id='description'
+                  name='select'
+                  id='exampleSelect'
                   placeholder='Description of the Item'
                   onChange={this.onChange}
                 >

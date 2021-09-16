@@ -4,7 +4,7 @@ const config = require('config');
 const bcrypt = require('bcrypt');
 const aws = require('aws-sdk');
 
-const jwtsecret = process.env.jwtsecret;
+const jwtsecret = process.env.jwtsecret; //Substitute this for "const jwtsecret = config.get(jwtsecret)" for local deployment
 
 module.exports.signup = (req, res) => {
   const { name, email, password } = req.body;
