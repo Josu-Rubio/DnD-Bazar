@@ -4,10 +4,10 @@ const config = require('config');
 const bcrypt = require('bcrypt');
 const aws = require('aws-sdk');
 
+const jwtsecret = process.env.jwtsecret;
+
 module.exports.signup = (req, res) => {
   const { name, email, password } = req.body;
-
-  const jwtsecret = process.env.jwtsecret;
 
   if (!name || !email || !password) {
     res.status(400).json({ msg: 'Please enter all fields' });
