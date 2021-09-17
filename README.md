@@ -65,6 +65,7 @@ This feature will be changed on a future so it only allow "admins" to add, uploa
 
 ## Work in progress
 
+- Filter (Category, Price, Name...)
 - Add images through Multer
 - Create permission on User (Admin, Buyer)
 - Add Multi languages through i18n
